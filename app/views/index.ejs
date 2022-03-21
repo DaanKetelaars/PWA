@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+  <section data-route="normal">
+    <nav>
+      <a href="#">
+        <img src="../assets/rijks-logo.png" alt="Rijksmusuem logo">
+      </a>
+    </nav>
+    <header class="searchContainer">
+      <h1>Rijks-Online</h1>
+      <form>
+        <input type="text" id="textField" placeholder="Zoek naar kunstwerken, kunstenaars en nog veel meer...">
+        <input type="submit" id="submitBtn" value="ZOEKEN">
+      </form>
+      <p class="zeroState">Neem een duik in het archief van het Rijks Museum.</p>
+    </header>
+    <div id="loader">Bezig met het laden van de kunstwerken...</div>
+    <div class="message">
+      <h2>Oeps... buiten het canvas gewerkt 🎨 ?</h2>
+      <p>Dit kan gebeuren, probeer het bovenin nogmaals!</p>
+    </div>
+  </section>
+  <section data-route="detail" class="disabled">
+    <nav>
+      <a href="#">
+        <img src="../assets/rijks-logo.png" alt="Rijksmusuem logo">
+      </a>
+      <a class="backBtn" href="#">Terug naar zoeken</a>
+    </nav>
+  </section>
+  <script src="/js/app.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<%- include('./partials/head.ejs') %>
+<h1><%=title%></h1>
+<% artworks.forEach(artwork => { %>
+<h1><%= artwork.title %></h1>
+<a href="/detail/<%= artwork.id %>">klik hier</a>
+<% }) %>
+
+<%- include('./partials/footer') %>

@@ -17,34 +17,44 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('home', {
-    title: 'Home',
+    subtitle: 'Neem een duik in het archief van het Rijks Museum.',
+    value: ''
   });
 })
 
 
 app.get('/search', (req, res) => {
-  let query = '';
   const key = `${url}&q=${req.query.q}`
   fetch(key)
     .then(async response => {
       const data = await response.json()
       const artworks = data.artObjects
-      res.render('search', {
-        title: req.query.q,
-        artworks
-      })
+      if (artworks.length > 0) {
+        res.render('search', {
+          title: req.query.q,
+          value: req.query.q,
+          artworks
+        })
+      } else {
+        res.render('error', {
+          title: 'Oeps... buiten het canvas gewerkt 🎨 ?',
+          subtitle: 'Dit kan gebeuren, de zoekterm kan niet gevonden worden. Probeer het bovenin nogmaals!',
+          value: req.query.q
+        })
+      }
     })
 })
 
-app.get('/detail/:id', (req, res) => {
-  const key = `${url}&q=${req.params.q}`
-
+app.get('/detail/:objectNumber', (req, res) => {
+  const key = `${url}&q=${req.params.objectNumber}`
+  console.log(key);
   fetch(key)
     .then(async response => {
       const data = await response.json()
-      // let artworks = data.artObject
+      const artworks = data.artObjects
       res.render('detail', {
         title: 'detail',
+        artworks
       })
     })
 })

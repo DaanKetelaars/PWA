@@ -1,22 +1,23 @@
 <%- include('./partials/head.ejs') %>
-<h1><%=title%></h1>
-<% artworks.forEach(artwork => { %>
-<ul>
-    <% if(artwork.webImage) {%>
-    <li>
-        <a href="/detail/<%= artwork.id %>">
-            <figure>
-                <figcaption>
-                    <h2><%= artwork.title %></h2>
-                    <p><%=artwork.principalOrFirstMaker %></p>
-                </figcaption>
-                <img src="<%= artwork.webImage.url%>" alt="<%= artwork.longTitle %>">
-            </figure>
-        </a>
-    </li>
-    <% } else{ %>
-    <% } %>
-</ul>
-<% }) %>
-
+<%- include('./partials/header.ejs') %>
+<main>
+    <ul>
+        <% artworks.forEach(artwork => { %>
+        <% if(artwork.webImage) {%>
+        <li>
+            <a href="/detail/<%= artwork.objectNumber %>">
+                <figure>
+                    <figcaption>
+                        <h2><%= artwork.title %></h2>
+                        <p><%=artwork.principalOrFirstMaker %></p>
+                    </figcaption>
+                    <img src="<%= artwork.webImage.url + 1500%>" alt="<%= artwork.longTitle %>">
+                </figure>
+            </a>
+        </li>
+        <% } else{ %>
+        <% } %>
+        <% }) %>
+    </ul>
+</main>
 <%- include('./partials/footer') %>

@@ -1,4 +1,14 @@
 <%- include('./partials/head.ejs') %>
-<h1><%=title%></h1>
-
+<a class="backBtn" href="javascript:history.back()">Terug</a>
+<main class="detail">
+    <% artworks.forEach(artwork => { %>
+    <figure>
+        <figcaption>
+            <h2><%=artwork.title%> - <%=artwork.principalOrFirstMaker%></h2>
+            <p><%=artwork.longTitle%></p>
+        </figcaption>
+        <img src="<%= artwork.webImage.url + 1500%>" alt="<%= artwork.longTitle %>">
+    </figure>
+    <% }) %>
+</main>
 <%- include('./partials/footer') %>

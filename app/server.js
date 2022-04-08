@@ -14,6 +14,12 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req, res, next) {
+  if (req.method == "GET" && !(req.rawHeaders.toString().includes("text/html"))) {
+    res.set("Cache-control", "public, max-age=31536000")
+  }
+  next()
+})
 
 app.get('/', (req, res) => {
   res.render('home', {
@@ -57,6 +63,10 @@ app.get('/detail/:objectNumber', (req, res) => {
         artworks
       })
     })
+})
+
+app.get('/offline', (req, res) => {
+  res.render('offline')
 })
 
 module.exports = app;

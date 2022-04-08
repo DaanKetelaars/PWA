@@ -33,6 +33,16 @@ Clone the GitHub Repo locally
 git clone https://github.com/DaanKetelaars/PWA
 ```
 
+Connect your API Key.
+
+- Go to the Rijks Studio.
+- Create an account.
+- Go to advanced settings and ask for your own personal API key.
+- in the **fetchData.js** file, add your own API key. 
+```
+`https://www.rijksmuseum.nl/api/nl/collection?key=[APIKEYHERE]&q=${userInput}`
+```
+
 Install all packages
 ```
 npm install

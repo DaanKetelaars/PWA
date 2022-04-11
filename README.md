@@ -11,13 +11,14 @@ https://rijks-online.herokuapp.com
 <img src="screenshot.png" alt="example of the live application" />
 
 ## Description
+Voor progressive web applicaties kregen wij de taak om onze client side app van WAFS om te zetten naar een server side app. De app blijft hetzelfde, maar de functionaliteiten veranderen. Je bent nu meer met de server bezig dan client side javascript. Wij hebben voor de server side app nodejs en express gebruikt. Server side en een PWA bied je ook meer opties om je app nog robuuster te maken. 
 
 
 ## Activity Diagram
 <img src="activity-diagram.jpg" alt="activity diagram" />
 
 ## Reflectie
-Ik ben erachter gekomen wat een bugs sommige websites nog hebben als je wat lagen weg gaat halen. Ook is het echt nog een klus om je website progressive ehancement proof te maken. Toch heb ik in deze 3 weken enorm veel geleerd. In het begin klonk het wat saai, maar ik vond het super interessant en leuk om mee bezig te zijn. Het is jammer dat we maar 3 weken hadden, ik had graag nog meer tijd erin gestoken om echt nog iets beters te maken. Toch heb ik mijn best gedaan voor die 3 weken en ben ik trots op mijn eindproduct. Ik ga zeker meer nadenken ook over progressive ehancement als ik aan andere projecten ga werken (ook buiten school).
+Het was even wennen, maar na een tijdje was het eigenlijk best simpel en overzichtelijk. Ik vond het wel prettig werken en helemaal de service worker vond ik echt top. Dat je offline nog van alles kan aanbieden is heel mooi en maakt je app of website nog beter in mijn ogen. Ik moet wel eerlijk zijn dat ik in het begin echt moeite heb gehad met express, omdat ik er zelf nog niet veel mee gewerkt had. Alleen ben ik toch tevreden uiteindelijk over mijn app. 
 
 ## Table of Contents
 
@@ -59,6 +60,7 @@ PORT = 8080
 - [git](https://git-scm.com/)
 - [NodeJS](https://node.jshttps://nodejs.org)
 - [ExpressJS](https://expressjs.com/)
+- [rijks-api](https://data.rijksmuseum.nl/object-metadata/api/)
 
 ## Meta
 For any questions, don't hesitate to reach out!

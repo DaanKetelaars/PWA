@@ -7,7 +7,11 @@
             <h2><%=artwork.title%> - <%=artwork.principalOrFirstMaker%></h2>
             <p><%=artwork.longTitle%></p>
         </figcaption>
-        <img src="<%= artwork.webImage.url + 1500%>" alt="<%= artwork.longTitle %>">
+        <picture>
+            <source srcset="<%= artwork.webImage.url + 1500%>" media="(min-width: 1200px)" />
+            <source srcset="<%= artwork.webImage.url + 1000%>" media="(min-width: 800px)" />
+            <img src="<%= artwork.webImage.url + 500%>" />
+        </picture>
     </figure>
     <% }) %>
 </main>

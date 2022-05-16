@@ -11,7 +11,15 @@
                         <h2><%= artwork.title %></h2>
                         <p><%=artwork.principalOrFirstMaker %></p>
                     </figcaption>
-                    <img src="<%= artwork.webImage.url + 1500%>" alt="<%= artwork.longTitle %>">
+                    <picture>
+                        <source srcset="<%= artwork.webImage.url + 1500%>" media="(min-width: 1200px)" />
+                        <source srcset="<%= artwork.webImage.url + 1000%>" media="(min-width: 800px)" />
+                        <img src="<%= artwork.webImage.url + 500%>" />
+                    </picture>
+                    <!-- <img src="<%= artwork.webImage.url + 1000%>" loading="lazy" alt="<%= artwork.longTitle %>"
+                        sizes="(min-width: 768px)"
+                        srcset="<%= artwork.webImage.url + 1500%> 800w, <%= artwork.webImage.url + 1000%> 600w, <%= artwork.webImage.url + 300%> 300w"> -->
+
                 </figure>
             </a>
         </li>

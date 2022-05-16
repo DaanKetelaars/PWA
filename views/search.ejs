@@ -12,13 +12,12 @@
                         <p><%=artwork.principalOrFirstMaker %></p>
                     </figcaption>
                     <picture>
-                        <source srcset="<%= artwork.webImage.url + 1500%>" media="(min-width: 1200px)" />
-                        <source srcset="<%= artwork.webImage.url + 1000%>" media="(min-width: 800px)" />
-                        <img src="<%= artwork.webImage.url + 500%>" />
+                        <source srcset="<%= artwork.webImage.url + 1500%>" media="(min-width: 1200px)"
+                            alt="<%=artwork.longTitle%>" />
+                        <source srcset="<%= artwork.webImage.url + 1000%>" media="(min-width: 800px)"
+                            alt="<%=artwork.longTitle%>" />
+                        <img src="<%= artwork.webImage.url + 500%>" alt="<%=artwork.longTitle%>" />
                     </picture>
-                    <!-- <img src="<%= artwork.webImage.url + 1000%>" loading="lazy" alt="<%= artwork.longTitle %>"
-                        sizes="(min-width: 768px)"
-                        srcset="<%= artwork.webImage.url + 1500%> 800w, <%= artwork.webImage.url + 1000%> 600w, <%= artwork.webImage.url + 300%> 300w"> -->
 
                 </figure>
             </a>

@@ -74,6 +74,5 @@ const ScrollJacking = () => {
     init();
     console.log('het werkt');
 }
-export {
-    ScrollJacking
-}
+
+ScrollJacking()

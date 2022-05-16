@@ -18,11 +18,13 @@
 @font-face {
     font-family: "Rijks-Normal";
     src: url("../assets/fonts/Rijksmuseum-Normal.woff") format("woff");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Rijks-Bold";
     src: url("../assets/fonts/Rijksmuseum-Bold.woff") format("woff");
+    font-display: swap;
 }
 
 ::-webkit-scrollbar {
@@ -132,7 +134,7 @@ h1 {
 
 .searchContainer p {
     width: 40ch;
-    color: #FFF;
+    color: #fff;
     text-align: center;
 }
 
@@ -214,7 +216,7 @@ main.detail {
 }
 
 main.detail figure {
-    padding: 2rem;
+    padding: 5rem 20rem;
 }
 
 .backBtn {
@@ -303,16 +305,6 @@ main.detail figure {
 
     ul li:nth-child(odd) {
         transform: translate(0px, 100px);
-    }
-
-    main.detail figure {
-        padding: 5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    main.detail figure {
-        padding: 5rem 10rem;
     }
 }
 

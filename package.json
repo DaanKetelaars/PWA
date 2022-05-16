@@ -3,9 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon node ./bin/www"
+    "start": "nodemon node ./bin/www",
+    "build": "npm-run-all build:*",
+    "build:css": "cleancss -o static/css/style-static.css public/css/style.css",
+    "build:js": "node-minify --compressor uglify-js --input 'public/js/app.js' --output 'static/js/app-static.js'"
   },
   "dependencies": {
+    "@node-minify/cli": "^6.2.0",
+    "@node-minify/uglify-js": "^6.2.0",
+    "clean-css-cli": "^5.6.0",
+    "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.0",
@@ -14,6 +21,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.7",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5"
   }
 }

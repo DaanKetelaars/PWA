@@ -1,6 +1,7 @@
 // Requires
 var express = require('express');
 var path = require('path');
+var compression = require('compression');
 const fetch = require('node-fetch');
 require('dotenv').config()
 
@@ -13,6 +14,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(compression());
+
 
 app.use(function (req, res, next) {
   if (req.method == "GET" && !(req.rawHeaders.toString().includes("text/html"))) {
@@ -53,11 +57,11 @@ app.get('/search', (req, res) => {
 
 app.get('/detail/:objectNumber', (req, res) => {
   const key = `${url}&q=${req.params.objectNumber}`
-  console.log(key);
   fetch(key)
     .then(async response => {
       const data = await response.json()
       const artworks = data.artObjects
+      console.log(artworks);
       res.render('detail', {
         title: 'detail',
         artworks
